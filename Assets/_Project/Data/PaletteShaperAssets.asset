@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2f706b9b30e30498d2a566b2d075f2, type: 3}
+  m_Name: PaletteShaperAssets
+  m_EditorClassIdentifier: Assembly-CSharp::PaletteShaper.Core.PaletteShaperAssets
+  playerIdle:
+  - {fileID: 1993651039, guid: 353ef24019686384f8688f885fab1098, type: 3}
+  - {fileID: -1570673822, guid: 353ef24019686384f8688f885fab1098, type: 3}
+  - {fileID: -1217823000, guid: 353ef24019686384f8688f885fab1098, type: 3}
+  - {fileID: 1082951463, guid: 353ef24019686384f8688f885fab1098, type: 3}
+  playerRun:
+  - {fileID: 1016979946, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  - {fileID: -1285574566, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  - {fileID: -537418436, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  - {fileID: 1536022829, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  - {fileID: 693852678, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  - {fileID: 327068616, guid: 04a3cd36c01492b468578b35ac56ace1, type: 3}
+  playerJump:
+  - {fileID: -1521200991, guid: e81dfcf296609344287fc82f1db58796, type: 3}
+  - {fileID: 589401936, guid: e81dfcf296609344287fc82f1db58796, type: 3}
+  playerFall:
+  - {fileID: 163120224, guid: 708252d6412cfdf41a8562c0a3d6c261, type: 3}
+  - {fileID: -1706395416, guid: 708252d6412cfdf41a8562c0a3d6c261, type: 3}
+  tileBaseStone: {fileID: 11400000, guid: 4696a7b36fabe53439bafc3db92eb373, type: 2}
+  tileBaseStoneEdgeRight: {fileID: 11400000, guid: a0e6915553fc99445bcc7a4049867876, type: 2}
+  tileBaseStoneEdgeBottom: {fileID: 11400000, guid: 6688e707357c1704b9c258777355a8d5, type: 2}
+  tileBaseStoneEdgeBoth: {fileID: 11400000, guid: ce7cc29e75a05cd46b21eb4108260d27, type: 2}
+  tileCrimsonSolid: {fileID: 11400000, guid: 858ab820fcf2f71448d38e83f0ab8713, type: 2}
+  tileCrimsonSolidInactive: {fileID: 11400000, guid: 6469a3e5916547542be818e96b73a590, type: 2}
+  crimsonCore:
+  - {fileID: 643504358, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
+  - {fileID: -660980939, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
+  - {fileID: 465490493, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
+  - {fileID: 1084624982, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
+  spikeActive: {fileID: 21300000, guid: fa29f41dbf333dd489df173397665597, type: 3}
+  spikeInactive: {fileID: 21300000, guid: 5c5a00aa3ca037d48a7436fda59574e7, type: 3}
+  bouncePadInactive: {fileID: 1629256819, guid: 79cd8d70a7fbebb489608bb6e3ebd5a8, type: 3}
+  bouncePadActive: {fileID: -618984473, guid: 79cd8d70a7fbebb489608bb6e3ebd5a8, type: 3}
+  sideBouncePadInactive: {fileID: 1177359996, guid: 58a3cd856c3540c4495f28717c08f8a8, type: 3}
+  sideBouncePadActive: {fileID: 1446640419, guid: 58a3cd856c3540c4495f28717c08f8a8, type: 3}
+  gearPlatformActive: {fileID: 21300000, guid: 61f838c5a0b9a0e42999f0f5b2ebc6e5, type: 3}
+  gearPlatformInactive: {fileID: 21300000, guid: f9991b57e2264234d818bb289a042d26, type: 3}
+  railTrack: {fileID: 21300000, guid: 6834223c4c051914cb29f8f7bd7eb55e, type: 3}
+  exitDoor: {fileID: 21300000, guid: 5be65ef07806207439429e2040022d90, type: 3}
+  bgWallTiles:
+  - {fileID: 11400000, guid: afc15e5e76fe6ec4aae55be046f29e5d, type: 2}
+  - {fileID: 11400000, guid: 07761f38f54c4534cbb8d49930c926b9, type: 2}
+  - {fileID: 11400000, guid: 0d5152d226e17b242bbf2d1ecaf43a57, type: 2}
+  - {fileID: 11400000, guid: 07e17d59a9543f645924ac6765442f35, type: 2}
+  uiFont:
+  - {fileID: -1963738420, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1337037260, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1493713142, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 87000851, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -2034090291, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1930104406, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 687725683, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -14459887, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1127335655, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1356642383, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -811343228, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 445205031, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 741952467, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -402229112, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1424542010, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -836873232, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1620285831, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1390502281, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1379675666, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1935109365, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1211704028, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 959872009, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 305539094, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -808719329, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -248843414, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -878032048, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1300905052, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1330640973, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1820645329, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 699051893, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 994740801, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1092467599, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 493148953, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1427143824, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1347507761, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -217553230, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1188037563, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1965055081, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: 1706383279, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -1657671566, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  - {fileID: -440911932, guid: d1734aa8707d5594fb18f9e466e15887, type: 3}
+  uiBar: {fileID: 21300000, guid: 5d968de9d044a254290cb69dbd660c8b, type: 3}
+  uiPaletteGauge:
+  - {fileID: 1210047902, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
+  - {fileID: 652845791, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
+  - {fileID: -932720657, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
+  waveMaterial: {fileID: 2100000, guid: c7126223033129f4fa6117b9ce1ad0e3, type: 2}

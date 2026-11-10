@@ -1,0 +1,17 @@
+# Palette Shaper - Unity VCS ignore (ProjectSetupProcessor가 관리, 직접 수정 시 메뉴 재실행으로 덮어써짐)
+/Library/
+/Temp/
+/Obj/
+/obj/
+/Build/
+/Builds/
+/Logs/
+/UserSettings/
+/MemoryCaptures/
+*.csproj
+*.sln
+.vs/
+.idea/
+*.slnx
+/Backup/
+UpgradeLog*.htm

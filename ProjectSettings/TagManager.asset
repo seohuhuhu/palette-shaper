@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Terrain_Base
+  - Crimson_Solid
+  - Crimson_Hazard
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BG_Wall
+    uniqueID: 1967460333
+    locked: 0
+  - name: BG_Props
+    uniqueID: 2108789634
+    locked: 0
+  - name: Gimmick_Inactive
+    uniqueID: 769853329
+    locked: 0
+  - name: Terrain_Base
+    uniqueID: 1734771776
+    locked: 0
+  - name: Gimmick_Active
+    uniqueID: 973196629
+    locked: 0
+  - name: Player
+    uniqueID: 1272802313
+    locked: 0
+  - name: VFX_Wave
+    uniqueID: 2117549413
+    locked: 0
+  - name: UI
+    uniqueID: 765663734
+    locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []
