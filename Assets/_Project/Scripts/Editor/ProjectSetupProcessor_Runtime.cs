@@ -61,6 +61,9 @@ namespace PaletteShaper.EditorTools
             db.playerRun = Frames("Spr_Player_Run_Strip6", 6);
             db.playerJump = Frames("Spr_Player_Jump_Strip2", 2);
             db.playerFall = Frames("Spr_Player_Fall_Strip2", 2);
+            db.playerGhostCrimson = Frames("Spr_Player_Ghost_Crimson_Strip14", 14);
+            db.playerGhostAmber = Frames("Spr_Player_Ghost_Amber_Strip14", 14);
+            db.playerGhostMono = Frames("Spr_Player_Ghost_Mono_Strip14", 14);
 
             db.tileBaseStone = CreateOrUpdateTile("Tile_BaseStone", One("Spr_Tile_BaseStone"));
             db.tileBaseStoneEdgeRight = CreateOrUpdateTile("Tile_BaseStoneEdgeRight", One("Spr_Tile_BaseStoneEdgeRight"));
@@ -68,6 +71,8 @@ namespace PaletteShaper.EditorTools
             db.tileBaseStoneEdgeBoth = CreateOrUpdateTile("Tile_BaseStoneEdgeBoth", One("Spr_Tile_BaseStoneEdgeBoth"));
             db.tileCrimsonSolid = CreateOrUpdateTile("Tile_CrimsonSolid", One("Spr_Tile_CrimsonActive"));
             db.tileCrimsonSolidInactive = CreateOrUpdateTile("Tile_CrimsonSolidInactive", One("Spr_Tile_CrimsonInactive"));
+            db.tileAmberSolid = CreateOrUpdateTile("Tile_AmberSolid", One("Spr_Tile_AmberActive"));
+            db.tileAmberSolidInactive = CreateOrUpdateTile("Tile_AmberSolidInactive", One("Spr_Tile_AmberInactive"));
 
             db.crimsonCore = Frames("Spr_Gimmick_CrimsonCore_Strip4", 4);
             db.spikeActive = One("Spr_Gimmick_SpikeActive");
@@ -79,19 +84,26 @@ namespace PaletteShaper.EditorTools
             db.gearPlatformActive = One("Spr_Gimmick_GearPlatform");
             db.gearPlatformInactive = One("Spr_Gimmick_GearPlatform_Inactive");
             db.railTrack = One("Spr_Gimmick_RailTrack");
+            db.amberCore = Frames("Spr_Gimmick_AmberCore_Strip4", 4);
+            db.amberSpikeActive = One("Spr_Gimmick_AmberSpikeActive");
+            db.amberSpikeInactive = One("Spr_Gimmick_AmberSpikeInactive");
+            db.amberUpdraft = Frames("Spr_Gimmick_AmberUpdraft_Strip4", 4);
+            db.amberUpdraftInactive = One("Spr_Gimmick_AmberUpdraft_Inactive");
             db.exitDoor = One("Spr_Prop_ExitDoor");
             var bgFrames = Frames("Spr_BG_Wall_Strip4", 4);
             db.bgWallTiles = bgFrames.Select((s, i) => (TileBase)CreateOrUpdateTile($"Tile_BGWall_{i}", s, false)).ToArray();
             db.uiFont = Frames($"Spr_UI_Font_Strip{GameConstants.UI_FONT_GLYPHS.Length}", GameConstants.UI_FONT_GLYPHS.Length);
             db.uiBar = One("Spr_UI_Bar");
             db.uiPaletteGauge = Frames("Spr_UI_PaletteGauge_Strip3", 3);
+            db.uiSlotCrimson = Frames("Spr_UI_SlotCrimson_Strip3", 3);
+            db.uiSlotAmber = Frames("Spr_UI_SlotAmber_Strip3", 3);
             db.waveMaterial = CreateOrUpdateWaveMaterial(errors);
 
             EditorUtility.SetDirty(db);
             AssetDatabase.SaveAssets();
 
             if (errors.Count == 0)
-                Debug.Log($"{LogTag}[Runtime] ALL PASS: Tile 10개, Mat_WaveRing, PaletteShaperAssets 갱신");
+                Debug.Log($"{LogTag}[Runtime] ALL PASS: Tile 12개, Mat_WaveRing, PaletteShaperAssets 갱신");
             else
             {
                 Debug.LogError($"{LogTag}[Runtime] FAILED: 문제 {errors.Count}건");
@@ -166,7 +178,7 @@ namespace PaletteShaper.EditorTools
             var log = new StringBuilder($"{LogTag} MainScene {(isNew ? "생성" : "갱신")}\n");
             foreach (var root in scene.GetRootGameObjects())
             {
-                if (root.name == "PaletteManager" || root.name == "Player" || root.name == "RoomManager" || root.name == "DebugRoomLoader")
+                if (root.name == "PaletteManager" || root.name == "Player" || root.name == "RoomManager" || root.name == "DebugRoomLoader" || root.name == "Juice")
                     Object.DestroyImmediate(root);
             }
             SetupMainCamera(log);
@@ -193,10 +205,20 @@ namespace PaletteShaper.EditorTools
             SetObjectRef(rooms, "player", player);
             SetObjectRef(rooms, "hud", hud);
 
+            // GDD 7.6 / 7.7: Game Juice + 절차적 효과음
+            var juiceGo = new GameObject("Juice");
+            var juice = juiceGo.AddComponent<JuiceManager>();
+            SetObjectRef(juice, "assets", db);
+            SetObjectRef(juice, "player", player);
+            SetObjectRef(juice, "targetCamera", cam);
+            juiceGo.AddComponent<AudioSource>();
+            var sfx = juiceGo.AddComponent<ProceduralSoundManager>();
+            SetObjectRef(sfx, "player", player);
+
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, MainScenePath);
             AddMainSceneToBuild(log);
-            log.AppendLine("- PaletteManager, Pfb_Player, StageHUD(카메라 자식), RoomManager 배치 및 참조 연결");
+            log.AppendLine("- PaletteManager, Pfb_Player, StageHUD(카메라 자식), RoomManager, Juice(JuiceManager+ProceduralSoundManager) 배치 및 참조 연결");
             Debug.Log(log.ToString());
         }
 

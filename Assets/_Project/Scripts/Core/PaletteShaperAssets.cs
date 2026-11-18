@@ -15,6 +15,10 @@ namespace PaletteShaper.Core
         public Sprite[] playerRun;
         public Sprite[] playerJump;
         public Sprite[] playerFall;
+        [Tooltip("잔상 실루엣 14프레임 (Idle4+Run6+Jump2+Fall2 순서)")]
+        public Sprite[] playerGhostCrimson;
+        public Sprite[] playerGhostAmber;
+        public Sprite[] playerGhostMono;
 
         [Header("Tiles")]
         public TileBase tileBaseStone;
@@ -23,6 +27,8 @@ namespace PaletteShaper.Core
         public TileBase tileBaseStoneEdgeBoth;
         public TileBase tileCrimsonSolid;
         public TileBase tileCrimsonSolidInactive;
+        public TileBase tileAmberSolid;
+        public TileBase tileAmberSolidInactive;
 
         [Header("Gimmicks")]
         public Sprite[] crimsonCore;
@@ -36,6 +42,14 @@ namespace PaletteShaper.Core
         public Sprite gearPlatformInactive;
         public Sprite railTrack;
 
+        [Header("Gimmicks - Amber (Chapter 2)")]
+        public Sprite[] amberCore;
+        public Sprite amberSpikeActive;
+        public Sprite amberSpikeInactive;
+        [Tooltip("활성 상승 기류 4프레임 루프")]
+        public Sprite[] amberUpdraft;
+        public Sprite amberUpdraftInactive;
+
         [Header("Props / BG")]
         public Sprite exitDoor;
         [Tooltip("0 = 기본 벽돌, 1~3 = 금/점/덩굴 변종")]
@@ -47,6 +61,10 @@ namespace PaletteShaper.Core
         public Sprite uiBar;
         [Tooltip("0 = 잠김, 1 = MONOCHROME, 2 = CRIMSON")]
         public Sprite[] uiPaletteGauge;
+        [Tooltip("Q 슬롯: 0 = 잠김, 1 = 꺼짐, 2 = CRIMSON 켜짐")]
+        public Sprite[] uiSlotCrimson;
+        [Tooltip("E 슬롯: 0 = 잠김, 1 = 꺼짐, 2 = AMBER 켜짐")]
+        public Sprite[] uiSlotAmber;
 
         [Header("VFX")]
         public Material waveMaterial;

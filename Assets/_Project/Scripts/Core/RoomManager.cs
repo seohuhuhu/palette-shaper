@@ -5,11 +5,11 @@ using UnityEngine;
 namespace PaletteShaper.Core
 {
     /// <summary>
-    /// Room 1 → 5 진행 루프.
+    /// Room 1 → 10 진행 루프 (Chapter 1 = Room 1~5 CRIMSON, Chapter 2 = Room 6~10 AMBER).
     /// - ROOM_MAPS를 RoomBuilder로 생성, 플레이어를 P에 배치, 팔레트는 MONOCHROME으로 시작
-    /// - 출구(E) 도달 → 0.4초 후 다음 Room, Room 5 클리어 시 ALL CLEAR (Space로 처음부터)
-    /// - 사망 후 리스폰 시 팔레트를 MONOCHROME으로 초기화
-    /// - Q 전환 권한은 Room 1의 코어로 해금되며 이후 Room에서는 유지된다
+    /// - 출구(E) 도달 → 0.4초 후 다음 Room, 마지막 Room 클리어 시 ALL CLEAR (Space로 처음부터)
+    /// - 사망 후 리스폰 시 팔레트를 MONOCHROME으로 초기화 (그 Room에서 얻은 해금은 유지)
+    /// - 해금: Room 1 = 둘 다 잠김(* 로 Q 해금), Room 2~6 = Q만(Room 6의 @ 로 E 해금), Room 7~ = Q·E 둘 다
     /// - 에디터/개발 빌드: N = 다음 Room, P = 이전 Room (테스트용)
     /// </summary>
     public class RoomManager : MonoBehaviour
@@ -19,14 +19,19 @@ namespace PaletteShaper.Core
         [SerializeField] PaletteShaperAssets assets;
         [SerializeField] PlayerController2D player;
         [SerializeField] StageHUD hud;
-        [SerializeField, Range(1, 5)] int startRoom = 1;
+        [SerializeField, Range(1, 10)] int startRoom = 1;
 
         public int CurrentRoom { get; private set; }
         public int RoomCount => GameConstants.ROOM_MAPS.Length;
-        public string StageLabel => $"STAGE 1-{CurrentRoom}";
+        public string StageLabel => StageLabelOf(CurrentRoom);
+        public static string StageLabelOf(int room) =>
+            $"STAGE {(room - 1) / GameConstants.CHAPTER_SIZE + 1}-{(room - 1) % GameConstants.CHAPTER_SIZE + 1}";
         /// <summary>현재 Room의 출구에 도달했는지 (다음 Room 대기 중 또는 ALL CLEAR)</summary>
         public bool ExitReached => transitioning || allClear;
         public bool IsAllClear => allClear;
+
+        /// <summary>출구에 도달한 순간 (사운드용)</summary>
+        public event System.Action RoomCleared;
 
         BuiltRoom room;
         bool transitioning;
@@ -62,7 +67,7 @@ namespace PaletteShaper.Core
             if (pm != null)
             {
                 pm.ResetToMonochrome();
-                if (number > 1) pm.UnlockSwitch(); // Room 1 코어 이후 Room은 전환 가능 상태로 시작
+                pm.SetUnlocks(number > 1, number > GameConstants.AMBER_UNLOCK_ROOM);
             }
 
             if (player != null)
@@ -83,6 +88,7 @@ namespace PaletteShaper.Core
         {
             if (transitioning) return;
             transitioning = true;
+            RoomCleared?.Invoke();
             StartCoroutine(AdvanceAfterDelay());
         }
 

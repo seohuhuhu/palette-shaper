@@ -30,12 +30,59 @@ MonoBehaviour:
   playerFall:
   - {fileID: 163120224, guid: 708252d6412cfdf41a8562c0a3d6c261, type: 3}
   - {fileID: -1706395416, guid: 708252d6412cfdf41a8562c0a3d6c261, type: 3}
+  playerGhostCrimson:
+  - {fileID: -572871991, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1648578356, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1736399243, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1886447672, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: 1873718566, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1479181369, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: 433257472, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: 1438660492, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1698698064, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -558289607, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -584228200, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -309280186, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: -1881438992, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  - {fileID: 629300204, guid: 229a158acc167a14f9956a3de6b3321d, type: 3}
+  playerGhostAmber:
+  - {fileID: 1703051596, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -345674378, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1355129128, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1972123442, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1392274306, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 1471935557, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 1168689399, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 1199301545, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1172716539, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 261188473, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1406851953, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 190156384, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: 463075806, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  - {fileID: -1524916329, guid: 00925201bfea49d4a949843ce36128a8, type: 3}
+  playerGhostMono:
+  - {fileID: 1293728995, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 1362009578, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 264237142, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 1083117812, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 2100264463, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: -590828463, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: -1414169080, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 542804813, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: -1595418990, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: -354543306, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 364829836, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: -1377009727, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 1587001074, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
+  - {fileID: 660138478, guid: 9f29a75ddffc6e544a146792d5f6ab38, type: 3}
   tileBaseStone: {fileID: 11400000, guid: 4696a7b36fabe53439bafc3db92eb373, type: 2}
   tileBaseStoneEdgeRight: {fileID: 11400000, guid: a0e6915553fc99445bcc7a4049867876, type: 2}
   tileBaseStoneEdgeBottom: {fileID: 11400000, guid: 6688e707357c1704b9c258777355a8d5, type: 2}
   tileBaseStoneEdgeBoth: {fileID: 11400000, guid: ce7cc29e75a05cd46b21eb4108260d27, type: 2}
   tileCrimsonSolid: {fileID: 11400000, guid: 858ab820fcf2f71448d38e83f0ab8713, type: 2}
   tileCrimsonSolidInactive: {fileID: 11400000, guid: 6469a3e5916547542be818e96b73a590, type: 2}
+  tileAmberSolid: {fileID: 11400000, guid: 5c983773287cbb64b8bb2a5fd473e538, type: 2}
+  tileAmberSolidInactive: {fileID: 11400000, guid: 63dfe9038a227b64ab390b1880bd33da, type: 2}
   crimsonCore:
   - {fileID: 643504358, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
   - {fileID: -660980939, guid: ef83eab93450e78419f36f57cb1466aa, type: 3}
@@ -50,6 +97,19 @@ MonoBehaviour:
   gearPlatformActive: {fileID: 21300000, guid: 61f838c5a0b9a0e42999f0f5b2ebc6e5, type: 3}
   gearPlatformInactive: {fileID: 21300000, guid: f9991b57e2264234d818bb289a042d26, type: 3}
   railTrack: {fileID: 21300000, guid: 6834223c4c051914cb29f8f7bd7eb55e, type: 3}
+  amberCore:
+  - {fileID: 1313550823, guid: bf658b2f47743aa4cb3f64c4d600f11b, type: 3}
+  - {fileID: 182634287, guid: bf658b2f47743aa4cb3f64c4d600f11b, type: 3}
+  - {fileID: -1215680354, guid: bf658b2f47743aa4cb3f64c4d600f11b, type: 3}
+  - {fileID: 1269547940, guid: bf658b2f47743aa4cb3f64c4d600f11b, type: 3}
+  amberSpikeActive: {fileID: 21300000, guid: 7261985189643084488dcec92a4aa749, type: 3}
+  amberSpikeInactive: {fileID: 21300000, guid: 79c5f35d49ed7494f9a9c9a9b2e208b4, type: 3}
+  amberUpdraft:
+  - {fileID: -2091541424, guid: 29fc31f93643c2b488206e960b307a5d, type: 3}
+  - {fileID: 744669327, guid: 29fc31f93643c2b488206e960b307a5d, type: 3}
+  - {fileID: -1228269613, guid: 29fc31f93643c2b488206e960b307a5d, type: 3}
+  - {fileID: 150078720, guid: 29fc31f93643c2b488206e960b307a5d, type: 3}
+  amberUpdraftInactive: {fileID: 21300000, guid: 232092b547c80fa4fbcaa0aa18dd2dbb, type: 3}
   exitDoor: {fileID: 21300000, guid: 5be65ef07806207439429e2040022d90, type: 3}
   bgWallTiles:
   - {fileID: 11400000, guid: afc15e5e76fe6ec4aae55be046f29e5d, type: 2}
@@ -103,4 +163,12 @@ MonoBehaviour:
   - {fileID: 1210047902, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
   - {fileID: 652845791, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
   - {fileID: -932720657, guid: a74fac6d6fe757843a65e6b330e646d7, type: 3}
+  uiSlotCrimson:
+  - {fileID: 1574533124, guid: b5450985052d30d4fa5a6e0a4f82ec38, type: 3}
+  - {fileID: -860566175, guid: b5450985052d30d4fa5a6e0a4f82ec38, type: 3}
+  - {fileID: -220415324, guid: b5450985052d30d4fa5a6e0a4f82ec38, type: 3}
+  uiSlotAmber:
+  - {fileID: 1823752070, guid: 8a79a9ff1384389478e84a5b9875d62b, type: 3}
+  - {fileID: -1132531380, guid: 8a79a9ff1384389478e84a5b9875d62b, type: 3}
+  - {fileID: 1937447702, guid: 8a79a9ff1384389478e84a5b9875d62b, type: 3}
   waveMaterial: {fileID: 2100000, guid: c7126223033129f4fa6117b9ce1ad0e3, type: 2}

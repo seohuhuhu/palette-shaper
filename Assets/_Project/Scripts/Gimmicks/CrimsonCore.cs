@@ -7,8 +7,8 @@ using UnityEngine;
 namespace PaletteShaper.Gimmicks
 {
     /// <summary>
-    /// 크림슨 코어(*). Room 1 전용. 맥동 4프레임 루프.
-    /// 플레이어가 닿으면 흡수(0.2초) 연출 후 사라지고 Q키 팔레트 전환 권한을 해금한다.
+    /// 물감 코어. 크림슨 코어(*, Room 1) → Q 해금 / 앰버 코어(@, Room 6, unlocks = AMBER) → E 해금.
+    /// 맥동 4프레임 루프. 플레이어가 닿으면 흡수(0.2초) 연출 후 사라진다.
     /// </summary>
     public class CrimsonCore : MonoBehaviour
     {
@@ -16,11 +16,18 @@ namespace PaletteShaper.Gimmicks
         [SerializeField] Sprite[] frames;
         [SerializeField] float fps = 8f;
         [SerializeField] float absorbDuration = 0.2f;
+        [SerializeField] PaletteState unlocks = PaletteState.CRIMSON;
 
         public static event Action Collected;
 
         bool collected;
         float timer;
+
+        public void Configure(SpriteRenderer target, Sprite[] pulseFrames, PaletteState unlockColor)
+        {
+            unlocks = unlockColor;
+            Configure(target, pulseFrames);
+        }
 
         public void Configure(SpriteRenderer target, Sprite[] pulseFrames)
         {
@@ -47,7 +54,12 @@ namespace PaletteShaper.Gimmicks
             if (body == null || body.GetComponent<PlayerController2D>() == null) return;
 
             collected = true;
-            if (PaletteManager.Instance != null) PaletteManager.Instance.UnlockSwitch();
+            var pm = PaletteManager.Instance;
+            if (pm != null)
+            {
+                if (unlocks == PaletteState.AMBER) pm.UnlockAmber();
+                else pm.UnlockSwitch();
+            }
             Collected?.Invoke();
             StartCoroutine(Absorb(body.transform));
         }

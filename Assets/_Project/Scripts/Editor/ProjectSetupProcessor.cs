@@ -221,6 +221,8 @@ namespace PaletteShaper.EditorTools
                 { GameConstants.LAYER_TERRAIN_BASE, GameConstants.LAYER_NAME_TERRAIN_BASE },
                 { GameConstants.LAYER_CRIMSON_SOLID, GameConstants.LAYER_NAME_CRIMSON_SOLID },
                 { GameConstants.LAYER_CRIMSON_HAZARD, GameConstants.LAYER_NAME_CRIMSON_HAZARD },
+                { GameConstants.LAYER_AMBER_SOLID, GameConstants.LAYER_NAME_AMBER_SOLID },
+                { GameConstants.LAYER_AMBER_HAZARD, GameConstants.LAYER_NAME_AMBER_HAZARD },
             };
             foreach (var kv in wanted)
             {

@@ -20,6 +20,7 @@ namespace PaletteShaper.Core
     ///        오른쪽/아래가 빈 칸이면 외곽선 오버레이 타일 추가
     /// - 'C','W': Crimson_Solid 타일맵 (같은 Composite 구성) + PaletteObject 타일 교체
     /// - 'X' 가시, 'B'/'R' 탄성, 'G'+'=' 톱니 발판·레일, '*' 코어, 'E' 석문(우측 하단 기준 2x3), 'P' 스폰
+    /// - Chapter 2 (AMBER): 'A' Amber_Solid 타일맵(Layer 10), 'Y' 앰버 가시(Layer 11), 'U' 상승 기류, '@' 앰버 코어
     /// - 좌/우/상단 보이지 않는 경계 벽, 빈 공간 배경은 BG_Wall(Warm Gray)
     /// </summary>
     public static class RoomBuilder
@@ -75,8 +76,12 @@ namespace PaletteShaper.Core
             var crimson = CreateTilemap(grid.transform, "Tilemap_Crimson", GameConstants.LAYER_CRIMSON_SOLID,
                 GameConstants.SORT_GIMMICK_ACTIVE, 0, true, out var crimsonRenderer, out var crimsonCollider, out var crimsonComposite);
 
+            var amber = CreateTilemap(grid.transform, "Tilemap_Amber", GameConstants.LAYER_AMBER_SOLID,
+                GameConstants.SORT_GIMMICK_ACTIVE, 0, true, out var amberRenderer, out var amberCollider, out var amberComposite);
+
             var gimmicks = NewChild(root.transform, "Gimmicks", Vector2.zero).transform;
             bool crimsonUsed = false;
+            bool amberUsed = false;
 
             for (int r = 0; r < H; r++)
             {
@@ -103,6 +108,23 @@ namespace PaletteShaper.Core
 
                         case GameConstants.SYM_CRIMSON_SPIKE:
                             CreateHazard(gimmicks, center, a);
+                            break;
+
+                        case GameConstants.SYM_AMBER_BLOCK:
+                            amber.SetTile(CellToTile(c, r), a.tileAmberSolid);
+                            amberUsed = true;
+                            break;
+
+                        case GameConstants.SYM_AMBER_SPIKE:
+                            CreateAmberHazard(gimmicks, center, a);
+                            break;
+
+                        case GameConstants.SYM_AMBER_UPDRAFT:
+                            CreateUpdraft(gimmicks, c, r, a);
+                            break;
+
+                        case GameConstants.SYM_AMBER_CORE:
+                            CreateAmberCore(gimmicks, center, a);
                             break;
 
                         case GameConstants.SYM_BOUNCE_VERTICAL:
@@ -140,10 +162,20 @@ namespace PaletteShaper.Core
                 }
             }
 
-            // 크림슨 타일맵: 상태에 따라 타일 교체 + Sorting Layer 교체
-            var crimsonPalette = crimson.gameObject.AddComponent<PaletteObject>();
-            crimsonPalette.ConfigureTilemap(crimson, crimsonRenderer, a.tileCrimsonSolid, a.tileCrimsonSolidInactive);
-            if (!crimsonUsed) crimson.gameObject.SetActive(false);
+            // 크림슨 타일맵: 충돌용(렌더 끔)과 표시용(콜라이더 없음)을 분리 → 실체화 팝업이 판정을 키우지 않게
+            var crimsonVisual = MakeVisualCopy(grid.transform, crimson, "Tilemap_Crimson_Visual", out var crimsonVisualRenderer);
+            crimsonRenderer.enabled = false;
+            var crimsonPalette = crimsonVisual.gameObject.AddComponent<PaletteObject>();
+            crimsonPalette.ConfigureTilemap(crimsonVisual, crimsonVisualRenderer, a.tileCrimsonSolid, a.tileCrimsonSolidInactive);
+            if (!crimsonUsed) { crimson.gameObject.SetActive(false); crimsonVisual.gameObject.SetActive(false); }
+
+            // 앰버 타일맵: AMBER일 때만 실체화 (점선은 Gold Ivory로 크림슨 점선과 구분)
+            var amberVisual = MakeVisualCopy(grid.transform, amber, "Tilemap_Amber_Visual", out var amberVisualRenderer);
+            amberRenderer.enabled = false;
+            var amberPalette = amberVisual.gameObject.AddComponent<PaletteObject>();
+            amberPalette.SetOwnColor(PaletteState.AMBER);
+            amberPalette.ConfigureTilemap(amberVisual, amberVisualRenderer, a.tileAmberSolid, a.tileAmberSolidInactive);
+            if (!amberUsed) { amber.gameObject.SetActive(false); amberVisual.gameObject.SetActive(false); }
 
             // 콜라이더 즉시 생성
             terrainCollider.ProcessTilemapChanges();
@@ -152,6 +184,11 @@ namespace PaletteShaper.Core
             {
                 crimsonCollider.ProcessTilemapChanges();
                 crimsonComposite.GenerateGeometry();
+            }
+            if (amberUsed)
+            {
+                amberCollider.ProcessTilemapChanges();
+                amberComposite.GenerateGeometry();
             }
 
             // 좌/우/상단 보이지 않는 경계 (하단은 열어 두고 추락 사망 처리)
@@ -176,6 +213,27 @@ namespace PaletteShaper.Core
             go.transform.SetParent(parent, false);
             go.transform.position = position;
             return go;
+        }
+
+        /// <summary>충돌 타일맵과 같은 타일을 가진 표시 전용 타일맵(콜라이더 없음)</summary>
+        static Tilemap MakeVisualCopy(Transform grid, Tilemap source, string name, out TilemapRenderer renderer)
+        {
+            var src = source.GetComponent<TilemapRenderer>();
+            var copy = CreateTilemap(grid, name, 0, src.sortingLayerName, src.sortingOrder, false, out renderer, out _, out _);
+            foreach (var cell in source.cellBounds.allPositionsWithin)
+            {
+                var t = source.GetTile(cell);
+                if (t != null) copy.SetTile(cell, t);
+            }
+            return copy;
+        }
+
+        /// <summary>스프라이트는 자식 "Visual"에 둔다 (부모 콜라이더와 분리 → 팝업 스케일이 판정에 영향 없음)</summary>
+        static SpriteRenderer AddVisual(GameObject parent)
+        {
+            var v = new GameObject("Visual");
+            v.transform.SetParent(parent.transform, false);
+            return v.AddComponent<SpriteRenderer>();
         }
 
         static Tilemap CreateTilemap(Transform grid, string name, int layer, string sortingLayer, int order, bool withCollider,
@@ -206,11 +264,42 @@ namespace PaletteShaper.Core
         {
             var go = NewChild(parent, "Hazard_X", center);
             go.layer = GameConstants.LAYER_CRIMSON_HAZARD;
-            var sr = go.AddComponent<SpriteRenderer>();
+            var sr = AddVisual(go);
             var col = go.AddComponent<BoxCollider2D>();
             col.isTrigger = true;
             col.size = new Vector2(GameConstants.HAZARD_HITBOX_SIZE, GameConstants.HAZARD_HITBOX_SIZE); // 8x8 px (관대한 판정)
             go.AddComponent<CrimsonHazard>().ConfigureSprite(sr, a.spikeActive, a.spikeInactive);
+        }
+
+        static void CreateAmberHazard(Transform parent, Vector2 center, PaletteShaperAssets a)
+        {
+            var go = NewChild(parent, "Hazard_Y", center);
+            go.layer = GameConstants.LAYER_AMBER_HAZARD;
+            var sr = AddVisual(go);
+            var col = go.AddComponent<BoxCollider2D>();
+            col.isTrigger = true;
+            col.size = new Vector2(GameConstants.HAZARD_HITBOX_SIZE, GameConstants.HAZARD_HITBOX_SIZE); // 8x8 px (X와 동일)
+            var hazard = go.AddComponent<CrimsonHazard>();
+            hazard.SetOwnColor(PaletteState.AMBER);
+            hazard.ConfigureSprite(sr, a.amberSpikeActive, a.amberSpikeInactive);
+        }
+
+        static void CreateUpdraft(Transform parent, int c, int r, PaletteShaperAssets a)
+        {
+            var go = NewChild(parent, "Updraft_U", CellCenter(c, r));
+            var sr = AddVisual(go);
+            var area = new Rect(c, CellBottom(r), 1f, 1f);
+            go.AddComponent<AmberUpdraft>().ConfigureUpdraft(sr, a.amberUpdraft, a.amberUpdraftInactive, area);
+        }
+
+        static void CreateAmberCore(Transform parent, Vector2 center, PaletteShaperAssets a)
+        {
+            var go = NewChild(parent, "AmberCore", center);
+            var sr = go.AddComponent<SpriteRenderer>();
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            col.radius = 0.4f;
+            go.AddComponent<CrimsonCore>().Configure(sr, a.amberCore, PaletteState.AMBER);
         }
 
         static void CreateBouncePad(Transform parent, Vector2 center, Sprite active, Sprite inactive, Vector2 velocity,
@@ -218,7 +307,7 @@ namespace PaletteShaper.Core
         {
             var go = NewChild(parent, name, center);
             go.layer = GameConstants.LAYER_CRIMSON_SOLID;
-            var sr = go.AddComponent<SpriteRenderer>();
+            var sr = AddVisual(go);
             var col = go.AddComponent<BoxCollider2D>();
             col.isTrigger = true;
             col.size = triggerSize;
@@ -239,7 +328,7 @@ namespace PaletteShaper.Core
             go.layer = GameConstants.LAYER_CRIMSON_SOLID;
             var body = go.AddComponent<Rigidbody2D>();
             body.bodyType = RigidbodyType2D.Kinematic;
-            var sr = go.AddComponent<SpriteRenderer>();
+            var sr = AddVisual(go);
             var col = go.AddComponent<BoxCollider2D>();
             col.size = new Vector2(2f, 1f);
             go.AddComponent<CrimsonGearPlatform>().ConfigurePlatform(sr, a.gearPlatformActive, a.gearPlatformInactive, col, start, finish);
