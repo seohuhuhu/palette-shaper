@@ -161,13 +161,14 @@ namespace PaletteShaper.Core
             { this.widthPx = widthPx; this.heightPx = heightPx; this.duration = duration; }
         }
 
-        /// <summary>단계(1~4px)별 키프레임: 눌림 유지 → 중간 → 반동(스트레치) → 원래 모양(배열 끝)</summary>
+        /// <summary>단계(1~4px)별 키프레임: 눌림 유지 → 중간 → 반동(스트레치) → 원래 모양(배열 끝)
+        /// 2026-11-18: 폭 14px 단계는 nearest 열 복제로 한쪽 눈이 굵어져(짝짝이) 폭을 12로 고정. 옆으로 퍼지는 눌림은 PixelLab 착지 전용 프레임으로 대체 예정.</summary>
         public static readonly LandSquashKey[][] LAND_SQUASH_KEYS =
         {
             new[] { new LandSquashKey(12, 15, 0.04f) },
-            new[] { new LandSquashKey(14, 14, 0.05f), new LandSquashKey(12, 15, 0.03f), new LandSquashKey(12, 17, 0.05f) },
-            new[] { new LandSquashKey(14, 13, 0.06f), new LandSquashKey(14, 15, 0.03f), new LandSquashKey(12, 17, 0.06f) },
-            new[] { new LandSquashKey(14, 12, 0.08f), new LandSquashKey(14, 14, 0.04f), new LandSquashKey(12, 18, 0.07f), new LandSquashKey(12, 17, 0.03f) },
+            new[] { new LandSquashKey(12, 14, 0.05f), new LandSquashKey(12, 15, 0.03f), new LandSquashKey(12, 17, 0.05f) },
+            new[] { new LandSquashKey(12, 13, 0.06f), new LandSquashKey(12, 15, 0.03f), new LandSquashKey(12, 17, 0.06f) },
+            new[] { new LandSquashKey(12, 12, 0.08f), new LandSquashKey(12, 14, 0.04f), new LandSquashKey(12, 18, 0.07f), new LandSquashKey(12, 17, 0.03f) },
         };
 
         // ───────── UI ─────────
