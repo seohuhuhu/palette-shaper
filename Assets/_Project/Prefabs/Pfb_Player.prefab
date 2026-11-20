@@ -110,6 +110,10 @@ MonoBehaviour:
   idleFps: 6
   runFps: 12
   airFps: 8
+  turnFps: 20
+  landFps: 10
+  turnMinIdleTime: 0.15
+  updraftRiseMinVy: 3
 --- !u!1 &6698943288510323895
 GameObject:
   m_ObjectHideFlags: 0

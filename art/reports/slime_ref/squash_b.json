@@ -1,0 +1,22 @@
+{
+  "name": "squash_b",
+  "role": "character",
+  "ramps": [
+    "ivory_slime"
+  ],
+  "inputs": [
+    "art/raw/slime_ref/squash_b.png"
+  ],
+  "status": "FAIL",
+  "outline_mode": "outer",
+  "log": [],
+  "checks": [
+    {
+      "check": "Step 0",
+      "pass": false,
+      "count": 0,
+      "coords": [],
+      "cause": "frame 0: 내용 25x7px가 프레임 24x24에 들어가지 않음 (바깥 외곽선 자리 2x3px 포함)"
+    }
+  ]
+}

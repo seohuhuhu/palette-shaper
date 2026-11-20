@@ -1,0 +1,71 @@
+{
+  "stage": "Stage 1 - Crimson Sandstone + Chapter 2 앰버 (2026-11-20 amber_gimmick 추가)",
+  "rules": {
+    "outline_by_role": {
+      "character": "#181417",
+      "prop_sandstone": "#594D43",
+      "prop_wood_clay": "#38261C",
+      "gimmick_crimson": "#3D020B",
+      "terrain": null,
+      "gimmick_amber": "#422B0E"
+    },
+    "max_colors_per_sprite": 5,
+    "allow_semi_transparent_pixels": 0
+  },
+  "ramps": {
+    "ink_and_bg": {
+      "role": "캐릭터/적 외곽선(최암부 #181417) 및 던전 배경 벽면",
+      "colors": [
+        "#181417",
+        "#262225",
+        "#363134",
+        "#4A4447"
+      ]
+    },
+    "sandstone_terrain": {
+      "role": "사암 바닥(무선) 및 석조 기둥/잔해 소품(외곽선 #594D43)",
+      "colors": [
+        "#594D43",
+        "#7D6E60",
+        "#A69785",
+        "#C9BBA7"
+      ]
+    },
+    "ivory_slime": {
+      "role": "플레이어 슬라임 본체 — 따뜻한 크림(참고 그림 art/reference/slime_reference.png에서 추출). 외곽선·눈은 ink_and_bg[0] #181417",
+      "colors": [
+        "#BFA878",
+        "#D6C49B",
+        "#F0E1B8",
+        "#FAF4E2"
+      ]
+    },
+    "crimson_gimmick": {
+      "role": "크림슨 블록, 가시, 탄성 패드, 톱니, 코어(외곽선 #3D020B)",
+      "colors": [
+        "#3D020B",
+        "#750518",
+        "#B8253A",
+        "#FF6B7A"
+      ]
+    },
+    "wood_and_clay": {
+      "role": "출구 목재 문, 항아리, 마른 뿌리 소품(외곽선 #38261C)",
+      "colors": [
+        "#38261C",
+        "#5E402E",
+        "#8C6146",
+        "#B58663"
+      ]
+    },
+    "amber_gimmick": {
+      "role": "앰버 블록, 가시, 기류, 코어, 앰버 잔상·효과(외곽선 #422B0E). Chapter 2(Room 6~10)에서 쓰던 #6E4E1E/#D4A359/#FFE885에 최암부 #422B0E를 더한 4색",
+      "colors": [
+        "#422B0E",
+        "#6E4E1E",
+        "#D4A359",
+        "#FFE885"
+      ]
+    }
+  }
+}

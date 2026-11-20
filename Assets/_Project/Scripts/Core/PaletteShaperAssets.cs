@@ -15,7 +15,9 @@ namespace PaletteShaper.Core
         public Sprite[] playerRun;
         public Sprite[] playerJump;
         public Sprite[] playerFall;
-        [Tooltip("잔상 실루엣 14프레임 (Idle4+Run6+Jump2+Fall2 순서)")]
+        public Sprite[] playerLand;
+        public Sprite[] playerTurn;
+        [Tooltip("잔상 실루엣 20프레임 (Idle4+Run6+Jump2+Fall2+Land3+Turn3 순서)")]
         public Sprite[] playerGhostCrimson;
         public Sprite[] playerGhostAmber;
         public Sprite[] playerGhostMono;

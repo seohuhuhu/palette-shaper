@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f29a75ddffc6e544a146792d5f6ab38
+guid: 36c3928875b457a449ac93396afe9a38
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_0
+      name: Spr_Player_Ghost_Amber_Strip20_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bec89b5c19443d14ab0e94c3f43f424c
-      internalID: 1293728995
+      spriteID: 8deacd144bdcd9449adb85d921b323bc
+      internalID: -1253147805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_1
+      name: Spr_Player_Ghost_Amber_Strip20_1
       rect:
         serializedVersion: 2
         x: 24
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cee41820413a34542b533b568da36fe6
-      internalID: 1362009578
+      spriteID: 52aebe7b5d9840142b58858e15e6d567
+      internalID: -1155960113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_2
+      name: Spr_Player_Ghost_Amber_Strip20_2
       rect:
         serializedVersion: 2
         x: 48
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25130e1f1d4275a49a81a7a68c9f1d99
-      internalID: 264237142
+      spriteID: 90ba4a2f40611384aa71c148e8e2f21e
+      internalID: 221220133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_3
+      name: Spr_Player_Ghost_Amber_Strip20_3
       rect:
         serializedVersion: 2
         x: 72
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3159acf02fd4d04eac0b2c249e481c5
-      internalID: 1083117812
+      spriteID: cbaea39bc9926b14f930de751d3fc0c1
+      internalID: -1955031470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_4
+      name: Spr_Player_Ghost_Amber_Strip20_4
       rect:
         serializedVersion: 2
         x: 96
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87dc6b3a228dec84394c996b26cba400
-      internalID: 2100264463
+      spriteID: 8d7e698805154e34a96934bf57afa304
+      internalID: -978483297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_5
+      name: Spr_Player_Ghost_Amber_Strip20_5
       rect:
         serializedVersion: 2
         x: 120
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5de108c204e12a3478a0e7ed34886c3f
-      internalID: -590828463
+      spriteID: 1b28065d6401c2445a8dfaf8d58efafa
+      internalID: 2089217359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_6
+      name: Spr_Player_Ghost_Amber_Strip20_6
       rect:
         serializedVersion: 2
         x: 144
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4562d51352d0ab41bded2c31bb7b222
-      internalID: -1414169080
+      spriteID: 784d021b9d1bf234c8b744be6ecf8cad
+      internalID: 582364408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_7
+      name: Spr_Player_Ghost_Amber_Strip20_7
       rect:
         serializedVersion: 2
         x: 168
@@ -281,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edfd7b6a61aeeb240b8da6a3d6edac31
-      internalID: 542804813
+      spriteID: 0b884d505ef220e4e81946f9d1ebb367
+      internalID: -1222558706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_8
+      name: Spr_Player_Ghost_Amber_Strip20_8
       rect:
         serializedVersion: 2
         x: 192
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01aa697019906f247971982e00158851
-      internalID: -1595418990
+      spriteID: d9544e1b78a34d9409d09ef853c31c86
+      internalID: -1626915637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_9
+      name: Spr_Player_Ghost_Amber_Strip20_9
       rect:
         serializedVersion: 2
         x: 216
@@ -325,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41db11f3f39118340a0f5a235e86072b
-      internalID: -354543306
+      spriteID: e896acc6fae53ff4da9275547db310b5
+      internalID: -550537441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_10
+      name: Spr_Player_Ghost_Amber_Strip20_10
       rect:
         serializedVersion: 2
         x: 240
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f3f6b82f3d4c0847b207ab1eb0b1827
-      internalID: 364829836
+      spriteID: 40006dfc07302394e9c04ec489101248
+      internalID: -1732421254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_11
+      name: Spr_Player_Ghost_Amber_Strip20_11
       rect:
         serializedVersion: 2
         x: 264
@@ -369,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: adbcde3fffc4fba46bdb769127d9cdb3
-      internalID: -1377009727
+      spriteID: 2a2fd81e2ffc8bd4fa73d1427e0a3546
+      internalID: -1409895236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_12
+      name: Spr_Player_Ghost_Amber_Strip20_12
       rect:
         serializedVersion: 2
         x: 288
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d78028724c01488428c1de18d41d2363
-      internalID: 1587001074
+      spriteID: 7c69c0c2d2142d3408f9faab2ab167d5
+      internalID: 1470514948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Mono_Strip14_13
+      name: Spr_Player_Ghost_Amber_Strip20_13
       rect:
         serializedVersion: 2
         x: 312
@@ -413,8 +413,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1d6e0e63470c0f4bb476db4b5498c88
-      internalID: 660138478
+      spriteID: 56aa3b9142512ab42a3fd9a05343ceb0
+      internalID: -1303993806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac608071c73c0a43bd0ec432e0ce3b4
+      internalID: 991770109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_15
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e850b586a31834396dc543e3c06803
+      internalID: 1726670494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d8742c21ff66f42a2e3aa2812cc8f7
+      internalID: -1107808399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_17
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611355e0ff14fbf438193498fd5ff5ce
+      internalID: 303281225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_18
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cab803f0f8b43648872173a65481e9b
+      internalID: -1976765661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Amber_Strip20_19
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c240cbfddb5cef4db476844df6d476b
+      internalID: 304208500
       vertices: []
       indices: 
       edges: []
@@ -423,7 +555,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15e972339cab5f7438e1d349c0194f16
+    spriteID: 69d5ab98822cb1744931c9a692e3fc24
     internalID: 0
     vertices: []
     indices: 
@@ -433,20 +565,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spr_Player_Ghost_Mono_Strip14_0: 1293728995
-      Spr_Player_Ghost_Mono_Strip14_1: 1362009578
-      Spr_Player_Ghost_Mono_Strip14_10: 364829836
-      Spr_Player_Ghost_Mono_Strip14_11: -1377009727
-      Spr_Player_Ghost_Mono_Strip14_12: 1587001074
-      Spr_Player_Ghost_Mono_Strip14_13: 660138478
-      Spr_Player_Ghost_Mono_Strip14_2: 264237142
-      Spr_Player_Ghost_Mono_Strip14_3: 1083117812
-      Spr_Player_Ghost_Mono_Strip14_4: 2100264463
-      Spr_Player_Ghost_Mono_Strip14_5: -590828463
-      Spr_Player_Ghost_Mono_Strip14_6: -1414169080
-      Spr_Player_Ghost_Mono_Strip14_7: 542804813
-      Spr_Player_Ghost_Mono_Strip14_8: -1595418990
-      Spr_Player_Ghost_Mono_Strip14_9: -354543306
+      Spr_Player_Ghost_Amber_Strip20_0: -1253147805
+      Spr_Player_Ghost_Amber_Strip20_1: -1155960113
+      Spr_Player_Ghost_Amber_Strip20_10: -1732421254
+      Spr_Player_Ghost_Amber_Strip20_11: -1409895236
+      Spr_Player_Ghost_Amber_Strip20_12: 1470514948
+      Spr_Player_Ghost_Amber_Strip20_13: -1303993806
+      Spr_Player_Ghost_Amber_Strip20_14: 991770109
+      Spr_Player_Ghost_Amber_Strip20_15: 1726670494
+      Spr_Player_Ghost_Amber_Strip20_16: -1107808399
+      Spr_Player_Ghost_Amber_Strip20_17: 303281225
+      Spr_Player_Ghost_Amber_Strip20_18: -1976765661
+      Spr_Player_Ghost_Amber_Strip20_19: 304208500
+      Spr_Player_Ghost_Amber_Strip20_2: 221220133
+      Spr_Player_Ghost_Amber_Strip20_3: -1955031470
+      Spr_Player_Ghost_Amber_Strip20_4: -978483297
+      Spr_Player_Ghost_Amber_Strip20_5: 2089217359
+      Spr_Player_Ghost_Amber_Strip20_6: 582364408
+      Spr_Player_Ghost_Amber_Strip20_7: -1222558706
+      Spr_Player_Ghost_Amber_Strip20_8: -1626915637
+      Spr_Player_Ghost_Amber_Strip20_9: -550537441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

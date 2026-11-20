@@ -36,7 +36,19 @@ namespace PaletteShaper.EditorTools
         static Color32 WithAlpha(Color32 c, byte a) => new Color32(c.r, c.g, c.b, a);
 
         /// <summary>이전 버전에서 만들었지만 더 이상 쓰지 않는 스프라이트 (생성 시 삭제)</summary>
-        static readonly string[] ObsoleteSprites = { "Spr_BG_Wall" };
+        static readonly string[] ObsoleteSprites = { "Spr_BG_Wall",
+            "Spr_Player_Ghost_Crimson_Strip14", "Spr_Player_Ghost_Amber_Strip14", "Spr_Player_Ghost_Mono_Strip14" };
+
+        /// <summary>
+        /// art/ 파이프라인(art/scripts/process_pixel_art.py)이 만든 PNG를 그대로 쓰는 스프라이트 (2026-11-20).
+        /// Generate Sprites가 덮어쓰지 않는다. 검사: 잔상까지 전부 art/palette.hex.
+        /// </summary>
+        static readonly HashSet<string> ExternalSprites = new HashSet<string>
+        {
+            "Spr_Player_Idle_Strip4", "Spr_Player_Run_Strip6", "Spr_Player_Jump_Strip2", "Spr_Player_Fall_Strip2",
+            "Spr_Player_Land_Strip3", "Spr_Player_Turn_Strip3",
+            "Spr_Player_Ghost_Crimson_Strip20", "Spr_Player_Ghost_Amber_Strip20", "Spr_Player_Ghost_Mono_Strip20",
+        };
 
         static readonly string FontSpriteName = $"Spr_UI_Font_Strip{GameConstants.UI_FONT_GLYPHS.Length}";
 
@@ -112,9 +124,11 @@ namespace PaletteShaper.EditorTools
             { "Spr_Player_Run_Strip6", (24, 24, 6) },
             { "Spr_Player_Jump_Strip2", (24, 24, 2) },
             { "Spr_Player_Fall_Strip2", (24, 24, 2) },
-            { "Spr_Player_Ghost_Crimson_Strip14", (24, 24, 14) },
-            { "Spr_Player_Ghost_Amber_Strip14", (24, 24, 14) },
-            { "Spr_Player_Ghost_Mono_Strip14", (24, 24, 14) },
+            { "Spr_Player_Land_Strip3", (24, 24, 3) },
+            { "Spr_Player_Turn_Strip3", (24, 24, 3) },
+            { "Spr_Player_Ghost_Crimson_Strip20", (24, 24, 20) },
+            { "Spr_Player_Ghost_Amber_Strip20", (24, 24, 20) },
+            { "Spr_Player_Ghost_Mono_Strip20", (24, 24, 20) },
             { "Spr_Tile_BaseStone", (16, 16, 1) },
             { "Spr_Tile_CrimsonActive", (16, 16, 1) },
             { "Spr_Tile_CrimsonInactive", (16, 16, 1) },
@@ -157,6 +171,13 @@ namespace PaletteShaper.EditorTools
             {
                 string obsoletePath = $"{SpritesRoot}/{obsolete}.png";
                 if (AssetDatabase.LoadAssetAtPath<Texture2D>(obsoletePath) != null) AssetDatabase.DeleteAsset(obsoletePath);
+            }
+
+            foreach (var ext in ExternalSprites)
+            {
+                string extPath = $"{SpritesRoot}/{ext}.png";
+                if (File.Exists(Path.Combine(projectDir, extPath)))
+                    AssetDatabase.ImportAsset(extPath, ImportAssetOptions.ForceSynchronousImport | ImportAssetOptions.ForceUpdate);
             }
 
             foreach (var (name, frames) in SpriteData)
@@ -214,6 +235,17 @@ namespace PaletteShaper.EditorTools
         {
             var errors = new List<string>();
             var allowed = new HashSet<Color32>(PixelKey.Values, new Color32Comparer());
+            var artPalette = new HashSet<Color32>(new Color32Comparer());
+            string hexPath = Path.Combine(projectDir, "art", "palette.hex");
+            if (File.Exists(hexPath))
+            {
+                foreach (var line in File.ReadAllLines(hexPath))
+                {
+                    string h = line.Trim().TrimStart('#');
+                    if (h.Length == 6 && ColorUtility.TryParseHtmlString("#" + h, out Color c)) artPalette.Add((Color32)c);
+                }
+            }
+            else errors.Add("art/palette.hex 없음");
             foreach (var kv in SpriteSizeSpec)
             {
                 string assetPath = $"{SpritesRoot}/{kv.Key}.png";
@@ -224,8 +256,15 @@ namespace PaletteShaper.EditorTools
                 tex.LoadImage(File.ReadAllBytes(full));
                 int expW = kv.Value.w * kv.Value.frames, expH = kv.Value.h;
                 if (tex.width != expW || tex.height != expH) errors.Add($"{kv.Key}: 크기 {tex.width}x{tex.height} ≠ {expW}x{expH}");
-                int bad = tex.GetPixels32().Count(c => c.a != 0 && !allowed.Contains(c));
-                if (bad > 0) errors.Add($"{kv.Key}: 팔레트 밖 픽셀 {bad}개");
+                bool artPal = ExternalSprites.Contains(kv.Key); // 잔상 포함 전부 art/palette.hex 기준 (2026-11-20)
+                var check = artPal ? artPalette : allowed;
+                int bad = tex.GetPixels32().Count(c => c.a != 0 && !check.Contains(c));
+                if (bad > 0) errors.Add($"{kv.Key}: 팔레트 밖 픽셀 {bad}개 ({(artPal ? "art/palette.hex" : "게임 팔레트")} 기준)");
+                if (ExternalSprites.Contains(kv.Key))
+                {
+                    int semi = tex.GetPixels32().Count(c => c.a != 0 && c.a != 255);
+                    if (semi > 0) errors.Add($"{kv.Key}: 반투명 픽셀 {semi}개");
+                }
                 Object.DestroyImmediate(tex);
 
                 var ti = AssetImporter.GetAtPath(assetPath) as TextureImporter;
@@ -259,25 +298,15 @@ namespace PaletteShaper.EditorTools
             .Select(e => (e.name, e.raw.Replace("\r", "").Trim('\n')
                 .Split(new[] { "\n\n" }, System.StringSplitOptions.RemoveEmptyEntries)
                 .Select(f => f.Split('\n')).ToArray()))
+            .Where(e => !ExternalSprites.Contains(e.name))
             .Concat(new[] { (FontSpriteName, BuildFontFrames()) })
-            .Concat(BuildGhostSprites())
             .ToArray();
 
         static string[][] ParseRawFrames(string raw) => raw.Replace("\r", "").Trim('\n')
             .Split(new[] { "\n\n" }, System.StringSplitOptions.RemoveEmptyEntries)
             .Select(f => f.Split('\n')).ToArray();
 
-        /// <summary>
-        /// 고속 잔상(Ghost Trail)용 플레이어 실루엣: Idle4 + Run6 + Jump2 + Fall2 = 14프레임을 한 색으로 칠한 3종.
-        /// 팔레트 색 그대로(크림슨 L / 앰버 H / 흑백 G) → 런타임에서는 알파(0.45)만 조절해 색 검증 규칙을 지킨다.
-        /// </summary>
-        static IEnumerable<(string name, string[][] frames)> BuildGhostSprites()
-        {
-            var order = new[] { "Spr_Player_Idle_Strip4", "Spr_Player_Run_Strip6", "Spr_Player_Jump_Strip2", "Spr_Player_Fall_Strip2" };
-            var frames = order.SelectMany(n => ParseRawFrames(RawSpriteData.First(e => e.name == n).raw)).ToArray();
-            foreach (var (name, c) in new[] { ("Spr_Player_Ghost_Crimson_Strip14", 'L'), ("Spr_Player_Ghost_Amber_Strip14", 'H'), ("Spr_Player_Ghost_Mono_Strip14", 'G') })
-                yield return (name, frames.Select(f => f.Select(row => new string(row.Select(ch => ch == '.' ? '.' : c).ToArray())).ToArray()).ToArray());
-        }
+        // 잔상 실루엣(Ghost_*_Strip20)은 art/ 파이프라인에서 새 플레이어 스트립을 한 색으로 칠해 만든다 (ExternalSprites).
 
         static readonly (string name, string raw)[] RawSpriteData =
         {

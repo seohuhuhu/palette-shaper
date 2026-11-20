@@ -15,3 +15,5 @@
 *.slnx
 /Backup/
 UpgradeLog*.htm
+__pycache__/
+*.stale

@@ -1,0 +1,139 @@
+{
+  "name": "Spr_Player_Idle_Strip4",
+  "role": "character",
+  "ramps": [
+    "ivory_slime"
+  ],
+  "inputs": [
+    "art/raw/slime_strips/slime_idle_strip4.png"
+  ],
+  "status": "PASS",
+  "outline_mode": "outer",
+  "log": [
+    "frame 0: 위치 유지(align=none), 내용 x6-18 y7-21",
+    "frame 1: 위치 유지(align=none), 내용 x6-18 y7-21",
+    "frame 2: 위치 유지(align=none), 내용 x6-18 y8-21",
+    "frame 3: 위치 유지(align=none), 내용 x6-18 y8-21",
+    "frame 0: 반투명 0px 이진화, 외딴 잔여 0px 제거",
+    "frame 1: 반투명 0px 이진화, 외딴 잔여 0px 제거",
+    "frame 2: 반투명 0px 이진화, 외딴 잔여 0px 제거",
+    "frame 3: 반투명 0px 이진화, 외딴 잔여 0px 제거",
+    "frame 0: 램프 배정 {'ivory_slime': 123, 'line_ink': 4}",
+    "frame 1: 램프 배정 {'ivory_slime': 123, 'line_ink': 4}",
+    "frame 2: 램프 배정 {'ivory_slime': 110, 'line_ink': 4}",
+    "frame 3: 램프 배정 {'ivory_slime': 110, 'line_ink': 4}",
+    "frame 0: 원본 외곽선 0px 벗김 → 바깥 외곽선(outer) 47px 추가(#181417), 아랫선 보강 9px",
+    "frame 1: 원본 외곽선 0px 벗김 → 바깥 외곽선(outer) 47px 추가(#181417), 아랫선 보강 9px",
+    "frame 2: 원본 외곽선 0px 벗김 → 바깥 외곽선(outer) 45px 추가(#181417), 아랫선 보강 9px",
+    "frame 3: 원본 외곽선 0px 벗김 → 바깥 외곽선(outer) 45px 추가(#181417), 아랫선 보강 9px"
+  ],
+  "checks": [
+    {
+      "check": "프레임 크기",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "반투명 픽셀 == 0",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "팔레트 밖 색 == 0",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 0] 바깥선 = #181417만",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 0] 아랫선 2px",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 0] 색 수 <= 5",
+      "pass": true,
+      "count": 5,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 1] 바깥선 = #181417만",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 1] 아랫선 2px",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 1] 색 수 <= 5",
+      "pass": true,
+      "count": 5,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 2] 바깥선 = #181417만",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 2] 아랫선 2px",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 2] 색 수 <= 5",
+      "pass": true,
+      "count": 5,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 3] 바깥선 = #181417만",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 3] 아랫선 2px",
+      "pass": true,
+      "count": 0,
+      "coords": [],
+      "cause": ""
+    },
+    {
+      "check": "[frame 3] 색 수 <= 5",
+      "pass": true,
+      "count": 5,
+      "coords": [],
+      "cause": ""
+    }
+  ],
+  "preview": "art/reports/slime/Spr_Player_Idle_Strip4.png",
+  "output": "art/processed/Spr_Player_Idle_Strip4.png"
+}

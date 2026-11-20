@@ -61,9 +61,11 @@ namespace PaletteShaper.EditorTools
             db.playerRun = Frames("Spr_Player_Run_Strip6", 6);
             db.playerJump = Frames("Spr_Player_Jump_Strip2", 2);
             db.playerFall = Frames("Spr_Player_Fall_Strip2", 2);
-            db.playerGhostCrimson = Frames("Spr_Player_Ghost_Crimson_Strip14", 14);
-            db.playerGhostAmber = Frames("Spr_Player_Ghost_Amber_Strip14", 14);
-            db.playerGhostMono = Frames("Spr_Player_Ghost_Mono_Strip14", 14);
+            db.playerLand = Frames("Spr_Player_Land_Strip3", 3);
+            db.playerTurn = Frames("Spr_Player_Turn_Strip3", 3);
+            db.playerGhostCrimson = Frames("Spr_Player_Ghost_Crimson_Strip20", 20);
+            db.playerGhostAmber = Frames("Spr_Player_Ghost_Amber_Strip20", 20);
+            db.playerGhostMono = Frames("Spr_Player_Ghost_Mono_Strip20", 20);
 
             db.tileBaseStone = CreateOrUpdateTile("Tile_BaseStone", One("Spr_Tile_BaseStone"));
             db.tileBaseStoneEdgeRight = CreateOrUpdateTile("Tile_BaseStoneEdgeRight", One("Spr_Tile_BaseStoneEdgeRight"));

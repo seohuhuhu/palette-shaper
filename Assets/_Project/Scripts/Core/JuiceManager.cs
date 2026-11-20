@@ -53,7 +53,7 @@ namespace PaletteShaper.Core
             if (assets != null)
             {
                 int i = 0;
-                foreach (var arr in new[] { assets.playerIdle, assets.playerRun, assets.playerJump, assets.playerFall })
+                foreach (var arr in new[] { assets.playerIdle, assets.playerRun, assets.playerJump, assets.playerFall, assets.playerLand, assets.playerTurn })
                     if (arr != null) foreach (var s in arr) { if (s != null && !frameIndex.ContainsKey(s)) frameIndex[s] = i; i++; }
             }
             CreateMotes();

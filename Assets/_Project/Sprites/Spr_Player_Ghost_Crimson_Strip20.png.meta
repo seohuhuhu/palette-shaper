@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 229a158acc167a14f9956a3de6b3321d
+guid: 1e9dfa4d7239e984fa178842ad4611be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -21,7 +21,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -112,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_0
+      name: Spr_Player_Ghost_Crimson_Strip20_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6135969c194ee143bd6af8add7366c8
-      internalID: -572871991
+      spriteID: 3819cd298255225458558a4bd48a881e
+      internalID: 2702403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_1
+      name: Spr_Player_Ghost_Crimson_Strip20_1
       rect:
         serializedVersion: 2
         x: 24
@@ -149,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bff87ac2bb7f2b542b004a7028cc3fc1
-      internalID: -1648578356
+      spriteID: 6af653a1360fff64b833c7afcbb9653d
+      internalID: -2144013946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_2
+      name: Spr_Player_Ghost_Crimson_Strip20_2
       rect:
         serializedVersion: 2
         x: 48
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b79e97d301fd83a458e2c15cbd3c0785
-      internalID: -1736399243
+      spriteID: 0420560d0e2fbad43894ee1aa9aa344c
+      internalID: -768021411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_3
+      name: Spr_Player_Ghost_Crimson_Strip20_3
       rect:
         serializedVersion: 2
         x: 72
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136f26453b461424cb5f0a6aa010c3ef
-      internalID: -1886447672
+      spriteID: a00d9f6ed6faa514daf8ff7e6f89d869
+      internalID: -385513920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_4
+      name: Spr_Player_Ghost_Crimson_Strip20_4
       rect:
         serializedVersion: 2
         x: 96
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52514c018c64908448d9f69cbfebb1ff
-      internalID: 1873718566
+      spriteID: b3ce99ee430ec2745808f42c2d08419d
+      internalID: 295562384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_5
+      name: Spr_Player_Ghost_Crimson_Strip20_5
       rect:
         serializedVersion: 2
         x: 120
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc040687b58a3a459624c3f8bf3cdb3
-      internalID: -1479181369
+      spriteID: 389c92caeb0f6ad41a01e015d0dc6881
+      internalID: -1235892327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_6
+      name: Spr_Player_Ghost_Crimson_Strip20_6
       rect:
         serializedVersion: 2
         x: 144
@@ -259,14 +259,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e099f720979375b48ab0fdf1f2c837d4
-      internalID: 433257472
+      spriteID: 85439df212dcc064087e82920386a29c
+      internalID: 1053914737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_7
+      name: Spr_Player_Ghost_Crimson_Strip20_7
       rect:
         serializedVersion: 2
         x: 168
@@ -281,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5577f56ac7ecb3f4dac5b50d81686fe3
-      internalID: 1438660492
+      spriteID: 88a89759f0e9e9d40aa48b8849b15801
+      internalID: 635761099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_8
+      name: Spr_Player_Ghost_Crimson_Strip20_8
       rect:
         serializedVersion: 2
         x: 192
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d75cc556bb775643842ba57314dc025
-      internalID: -1698698064
+      spriteID: 191c81f7711c3d943b0eb031c49a4588
+      internalID: -82022415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_9
+      name: Spr_Player_Ghost_Crimson_Strip20_9
       rect:
         serializedVersion: 2
         x: 216
@@ -325,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93b0a9299680be04db217e404138aa89
-      internalID: -558289607
+      spriteID: 1bec172159a55744f9db1b002ded7e9b
+      internalID: 1601608761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_10
+      name: Spr_Player_Ghost_Crimson_Strip20_10
       rect:
         serializedVersion: 2
         x: 240
@@ -347,14 +347,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8135c2bf24dd4b843ae942a5546c21a5
-      internalID: -584228200
+      spriteID: 7851384956782c04096f6fa3b47ea251
+      internalID: -1852161419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_11
+      name: Spr_Player_Ghost_Crimson_Strip20_11
       rect:
         serializedVersion: 2
         x: 264
@@ -369,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a03b4c212d2a04468f2744649a216ee
-      internalID: -309280186
+      spriteID: eb2c7fa532440a64fa57ab835bc7192c
+      internalID: -680083293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_12
+      name: Spr_Player_Ghost_Crimson_Strip20_12
       rect:
         serializedVersion: 2
         x: 288
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca6b72f75d4074b4bbaba94266a1ef50
-      internalID: -1881438992
+      spriteID: 59ea6919f1d5c604abad1add75a18e55
+      internalID: -1603702837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spr_Player_Ghost_Crimson_Strip14_13
+      name: Spr_Player_Ghost_Crimson_Strip20_13
       rect:
         serializedVersion: 2
         x: 312
@@ -413,8 +413,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 771e660f4f440f04bacd54c549acc287
-      internalID: 629300204
+      spriteID: 9d50137b6f585f4409fe85da4f9d2997
+      internalID: -1528799121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b364d3c6a910b6744b10f4d5a03e9b29
+      internalID: -1047795173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_15
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56d7ca70e91109479c3433ee600c7e9
+      internalID: 1684100740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3ee92025ebaef42b115d1c60b8072f
+      internalID: -1770530236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_17
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2ba97e1f2d1784fb7668f165da8c78
+      internalID: -746608239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_18
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d640832a7e275d46abe19cbf90b6299
+      internalID: -1037558682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spr_Player_Ghost_Crimson_Strip20_19
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 24
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f725c15cd92cff844b6459173ca65a14
+      internalID: 1880374905
       vertices: []
       indices: 
       edges: []
@@ -423,7 +555,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 970ff8a5ebd6a064481237ad8df02815
+    spriteID: 50765ad9892b001458332f76f4c68e61
     internalID: 0
     vertices: []
     indices: 
@@ -433,20 +565,26 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spr_Player_Ghost_Crimson_Strip14_0: -572871991
-      Spr_Player_Ghost_Crimson_Strip14_1: -1648578356
-      Spr_Player_Ghost_Crimson_Strip14_10: -584228200
-      Spr_Player_Ghost_Crimson_Strip14_11: -309280186
-      Spr_Player_Ghost_Crimson_Strip14_12: -1881438992
-      Spr_Player_Ghost_Crimson_Strip14_13: 629300204
-      Spr_Player_Ghost_Crimson_Strip14_2: -1736399243
-      Spr_Player_Ghost_Crimson_Strip14_3: -1886447672
-      Spr_Player_Ghost_Crimson_Strip14_4: 1873718566
-      Spr_Player_Ghost_Crimson_Strip14_5: -1479181369
-      Spr_Player_Ghost_Crimson_Strip14_6: 433257472
-      Spr_Player_Ghost_Crimson_Strip14_7: 1438660492
-      Spr_Player_Ghost_Crimson_Strip14_8: -1698698064
-      Spr_Player_Ghost_Crimson_Strip14_9: -558289607
+      Spr_Player_Ghost_Crimson_Strip20_0: 2702403
+      Spr_Player_Ghost_Crimson_Strip20_1: -2144013946
+      Spr_Player_Ghost_Crimson_Strip20_10: -1852161419
+      Spr_Player_Ghost_Crimson_Strip20_11: -680083293
+      Spr_Player_Ghost_Crimson_Strip20_12: -1603702837
+      Spr_Player_Ghost_Crimson_Strip20_13: -1528799121
+      Spr_Player_Ghost_Crimson_Strip20_14: -1047795173
+      Spr_Player_Ghost_Crimson_Strip20_15: 1684100740
+      Spr_Player_Ghost_Crimson_Strip20_16: -1770530236
+      Spr_Player_Ghost_Crimson_Strip20_17: -746608239
+      Spr_Player_Ghost_Crimson_Strip20_18: -1037558682
+      Spr_Player_Ghost_Crimson_Strip20_19: 1880374905
+      Spr_Player_Ghost_Crimson_Strip20_2: -768021411
+      Spr_Player_Ghost_Crimson_Strip20_3: -385513920
+      Spr_Player_Ghost_Crimson_Strip20_4: 295562384
+      Spr_Player_Ghost_Crimson_Strip20_5: -1235892327
+      Spr_Player_Ghost_Crimson_Strip20_6: 1053914737
+      Spr_Player_Ghost_Crimson_Strip20_7: 635761099
+      Spr_Player_Ghost_Crimson_Strip20_8: -82022415
+      Spr_Player_Ghost_Crimson_Strip20_9: 1601608761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

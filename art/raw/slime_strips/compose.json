@@ -1,0 +1,236 @@
+{
+  "Idle": {
+    "path": "art/raw/slime_strips/slime_idle_strip4.png",
+    "frames": 4,
+    "eyes": [
+      {
+        "frame": 0,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 1,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 2,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 3,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "Run": {
+    "path": "art/raw/slime_strips/slime_run_strip6.png",
+    "frames": 6,
+    "eyes": [
+      {
+        "frame": 0,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 1,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 2,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 3,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 4,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 5,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "Jump": {
+    "path": "art/raw/slime_strips/slime_jump_strip2.png",
+    "frames": 2,
+    "eyes": [
+      {
+        "frame": 0,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 1,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "Fall": {
+    "path": "art/raw/slime_strips/slime_fall_strip2.png",
+    "frames": 2,
+    "eyes": [
+      {
+        "frame": 0,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 1,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      }
+    ]
+  },
+  "Land": {
+    "path": "art/raw/slime_strips/slime_land_strip3.png",
+    "frames": 3,
+    "eyes": [
+      {
+        "frame": 0,
+        "eyes": [
+          "1x1",
+          "1x1"
+        ],
+        "expect": [
+          "1x1",
+          "1x1"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 1,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      },
+      {
+        "frame": 2,
+        "eyes": [
+          "1x2",
+          "1x2"
+        ],
+        "expect": [
+          "1x2",
+          "1x2"
+        ],
+        "pass": true
+      }
+    ]
+  }
+}

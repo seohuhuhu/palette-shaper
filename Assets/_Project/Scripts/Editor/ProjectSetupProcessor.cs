@@ -46,7 +46,9 @@ namespace PaletteShaper.EditorTools
             "/Library/", "/Temp/", "/Obj/", "/obj/", "/Build/", "/Builds/", "/Logs/", "/UserSettings/", "/MemoryCaptures/",
             "*.csproj", "*.sln", ".vs/", ".idea/",
             // Visual Studio 자동 생성물 (2026-11 추가)
-            "*.slnx", "/Backup/", "UpgradeLog*.htm"
+            "*.slnx", "/Backup/", "UpgradeLog*.htm",
+            // art/ 파이프라인 부산물 (2026-11-20 추가)
+            "__pycache__/", "*.stale"
         };
 
         static readonly Regex StripRegex = new Regex(@"_Strip(\d+)$", RegexOptions.Compiled);
@@ -79,7 +81,8 @@ namespace PaletteShaper.EditorTools
             importer.SetTextureSettings(settings);
 
             importer.textureCompression = TextureImporterCompression.Uncompressed;
-            importer.isReadable = false;
+            // 플레이어는 런타임에 프레임별 실제 그림 폭(히트박스 밖으로 나온 px)을 읽어 벽 앞 시각 보정에 쓴다 (2026-11-20)
+            importer.isReadable = isPlayer;
 
             if (frames > 1)
                 SliceStrip(importer, fileName, frames, isPlayer);

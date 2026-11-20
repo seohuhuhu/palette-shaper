@@ -143,6 +143,9 @@ namespace PaletteShaper.Core
         // 자식 Visual의 localScale만 정수 px 단계로 바꾼다. scale = (폭px / 12, 높이px / 16), 피벗 = 발바닥 중앙.
         public const int LAND_BODY_W_PX = 12;              // 슬라임 몸통 기준 폭 (히트박스와 같음)
         public const int LAND_BODY_H_PX = 16;              // 슬라임 몸통 기준 높이
+        // 2026-11-20: 착지는 Land 3프레임 스프라이트로 표현. localScale 눌림은 끔 (단계 계산 LastLandTier는 유지 → PlayerAnimator가 사용)
+        public static readonly bool LAND_USE_SCALE_SQUASH = false;
+        public const int WALL_NUDGE_MAX_PX = 2;            // 벽 앞 시각 보정 최대 px (PlayerController2D.WallNudgePx)
         public const float LAND_MIN_FALL_SPEED = 2f;       // 이 속도(u/s) 이하로 내려앉으면 연출 없음
         // 단계 판정 1) 낙하 거리 h = 공중 최고점 − 착지 y (Unit)
         public const float LAND_TIER2_MIN_DROP = 1.25f;    // h < 1.25 → 1px (턱, 탭 점프)
@@ -273,7 +276,7 @@ namespace PaletteShaper.Core
             new string[] {
                 "####################",
                 "#..................#",
-                "#..............U..E#",
+                "#.................E#", // 2026-11-20 사용자 요청: 기류 맨 위 칸(row 2) 제거 → 천장에 붙지 않고 2-3처럼 둥둥 뜸 (턱 여유는 +0.02~0.10칸으로 빠듯 — 플레이 확인용)
                 "#..............U.###",
                 "#..........AA..U.###",
                 "#.......@......U.###",

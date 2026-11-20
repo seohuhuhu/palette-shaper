@@ -567,7 +567,7 @@ namespace PaletteShaper.Player
         {
             int tier = LandSquashTier(landingVy, drop, launched);
             LastLandTier = tier;
-            if (tier == 0) { StopLandSquash(); return; }
+            if (tier == 0 || !GameConstants.LAND_USE_SCALE_SQUASH) { StopLandSquash(); return; }
             PlayLandSquash(tier);
         }
 
@@ -595,6 +595,54 @@ namespace PaletteShaper.Player
             for (int i = 0; i < n; i++)
                 if (castHits[i].collider != box) return true;
             return false;
+        }
+
+        // ───────── 벽 앞 시각 보정 (2026-11-20) ─────────
+        // 슬라임 그림(외곽선 포함 13~14px)이 히트박스(12px)보다 넓어 벽에 붙으면 1~2px 파고들어 보인다.
+        // 히트박스는 그대로 두고, 벽에 닿은 쪽으로 '그 프레임이 히트박스 밖으로 나온 만큼'(최대 WALL_NUDGE_MAX_PX)만 그림을 벽 반대로 민다.
+        readonly System.Collections.Generic.Dictionary<Sprite, Vector2Int> spriteOverhang = new System.Collections.Generic.Dictionary<Sprite, Vector2Int>();
+
+        /// <summary>그림이 히트박스 왼쪽/오른쪽 밖으로 나온 px (flipX 전, 피벗=발바닥 중앙 기준)</summary>
+        Vector2Int Overhang(Sprite s)
+        {
+            if (s == null) return Vector2Int.zero;
+            if (spriteOverhang.TryGetValue(s, out var o)) return o;
+            o = Vector2Int.zero;
+            var tex = s.texture;
+            if (tex != null && tex.isReadable)
+            {
+                var r = s.rect;
+                int x0 = (int)r.x, y0 = (int)r.y, w = (int)r.width, h = (int)r.height;
+                var px = tex.GetPixels32();
+                int minC = w, maxC = -1;
+                for (int y = 0; y < h; y++)
+                    for (int x = 0; x < w; x++)
+                        if (px[(y0 + y) * tex.width + x0 + x].a > 0) { if (x < minC) minC = x; if (x > maxC) maxC = x; }
+                if (maxC >= 0)
+                {
+                    float pivotX = s.pivot.x;
+                    int halfBox = Mathf.RoundToInt(GameConstants.PLAYER_HITBOX_SIZE.x * GameConstants.PIXELS_PER_UNIT * 0.5f);
+                    int left = Mathf.RoundToInt(pivotX - halfBox) - minC;          // 히트박스 왼쪽 끝 열보다 왼쪽으로 나온 칸 수
+                    int right = maxC - (Mathf.RoundToInt(pivotX + halfBox) - 1);    // 히트박스 오른쪽 끝 열보다 오른쪽으로 나온 칸 수
+                    o = new Vector2Int(Mathf.Max(0, left), Mathf.Max(0, right));
+                }
+            }
+            spriteOverhang[s] = o;
+            return o;
+        }
+
+        int WallNudgePx()
+        {
+            var sr = VisualRenderer;
+            if (sr == null || IsDead) return 0;
+            var o = Overhang(sr.sprite);
+            int left = sr.flipX ? o.y : o.x, right = sr.flipX ? o.x : o.y;
+            if (left == 0 && right == 0) return 0;
+            bool wallLeft = left > 0 && WallWithinOnePixel(-1f);
+            bool wallRight = right > 0 && WallWithinOnePixel(1f);
+            if (wallLeft == wallRight) return 0; // 양쪽 다 막혔거나 둘 다 아님
+            int n = Mathf.Min(wallRight ? right : left, GameConstants.WALL_NUDGE_MAX_PX);
+            return wallRight ? -n : n;
         }
 
         void UpdateVisualScale(float dt)
@@ -625,6 +673,7 @@ namespace PaletteShaper.Player
             else
             {
                 visualScale = Vector2.Lerp(visualScale, Vector2.one, 1f - Mathf.Exp(-scaleRecoverSpeed * dt));
+                offset.x = WallNudgePx() * PixelSize;
             }
             if (visual != null)
             {
